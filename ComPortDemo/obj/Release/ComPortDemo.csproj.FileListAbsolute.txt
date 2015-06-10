@@ -6,3 +6,5 @@ C:\Users\Ayodele\Desktop\Software Test\ComPortDemo\ComPortDemo\obj\Release\ComPo
 C:\Users\Ayodele\Desktop\Software Test\ComPortDemo\ComPortDemo\obj\Release\ComPortDemo.Properties.Resources.resources
 C:\Users\Ayodele\Desktop\Software Test\ComPortDemo\ComPortDemo\obj\Release\ComPortDemo.csproj.GenerateResource.Cache
 C:\Users\Ayodele\Desktop\Software Test\ComPortDemo\ComPortDemo\obj\Release\ComPortDemo.csprojResolveAssemblyReference.cache
+C:\Users\Ayodele\Google Drive\DAA STEM Academy\Hack Software\ComPortDemo\ComPortDemo\obj\Release\ComPortDemo.exe
+C:\Users\Ayodele\Google Drive\DAA STEM Academy\Hack Software\ComPortDemo\ComPortDemo\obj\Release\ComPortDemo.pdb

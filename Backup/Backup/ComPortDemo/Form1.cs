@@ -84,16 +84,7 @@ namespace ComPortDemo
         {
             GetComPortNames();
             // TODO : Load this from a file so we remember the selected com port
-			try
-			{
-				cmbComPortList.SelectedIndex = 0;
-			}
-			catch (Exception)
-			{
-				
-		
-			}
-            
+            cmbComPortList.SelectedIndex = 0;
         }
 
 
@@ -106,7 +97,7 @@ namespace ComPortDemo
                     // You need to set the encoding to default or you will only get 7bits
                     serialPortCon.Encoding = System.Text.Encoding.Default;
                     serialPortCon.PortName = cmbComPortList.Text;
-                    serialPortCon.BaudRate = 38400;
+                    serialPortCon.BaudRate = 9600;
                     serialPortCon.Open();
                     cmbComPortList.Enabled = false;
                     butOpen.Text = "Close";

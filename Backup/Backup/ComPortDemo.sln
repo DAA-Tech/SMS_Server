@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComPortDemo", "ComPortDemo\ComPortDemo.csproj", "{C00018B4-2B3F-46DA-84BF-66A2699E767C}"
 EndProject
 Global
