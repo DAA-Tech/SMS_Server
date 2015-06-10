@@ -242,7 +242,7 @@ namespace ComPortDemo
         // -------------------------------------------------------------
         // Declarations
         // -------------------------------------------------------------
-        public static string DB_PATH = "C:\team excel.xlsx";  // Add your own path here
+        public static string DB_PATH = "C:\\sms_server.xlsx";  // Add your own path here
         private static Excel.Workbook MyBook = null;
         private static Excel.Application MyApp = null;
         private static Excel.Worksheet MySheet = null;
@@ -257,12 +257,14 @@ namespace ComPortDemo
             //Excel.Workbook excelWorkbook = null;
             MyApp = new Excel.Application();
             MyApp.Visible = true;
-            //MyBook = MyApp.Workbooks.Open(DB_PATH);
+            MyBook = MyApp.Workbooks.Open(DB_PATH);
+            MySheet = (Excel.Worksheet)MyBook.Sheets[1]; 
+            lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
             try
             {
                 MyBook = MyApp.Workbooks.Open(DB_PATH, 0,
-                    false, 5, "", "", false, Excel.XlPlatform.xlWindows, "", true,
-                    false, 0, true, false, false);
+                false, 5, "", "", false, Excel.XlPlatform.xlWindows, "", true,
+                false, 0, true, false, false);
             }
             catch
             {
@@ -270,8 +272,7 @@ namespace ComPortDemo
                 MyBook = MyApp.Workbooks.Add();
             }
 
-            MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explict cast is not required here
-            lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
         }
         // -------------------------------------------------------------
         // Write to Excel
@@ -303,8 +304,7 @@ namespace ComPortDemo
         public static void CloseExcel()
         {
             MyBook.Saved = true;
-            //MyApp.Quit();
-
+            MyApp.Quit();
         }
 
         // -------------------------------------------------------------
@@ -331,7 +331,6 @@ namespace ComPortDemo
                     byte[] commsBytesIn = new byte[bytesRecv];
                     // Read the coms data into a byte array
                     serialPortCon.Read(commsBytesIn, 0, bytesRecv);
-
                     Log(LogMsgType.Incoming, ByteArrayToHexString(commsBytesIn));
                 }
             }
